@@ -1,0 +1,45 @@
+#!/bin/bash
+# platyc - PLATYPUS compiler driver
+# Transpiles .pls to C, then compiles to executable
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+TRANSPILER="$SCRIPT_DIR/build/platy_trans"
+
+if [ $# -lt 1 ]; then
+    echo "Usage: platyc <source.pls> [output]"
+    echo ""
+    echo "Compiles PLATYPUS source to executable."
+    echo "If output is not specified, uses source filename without extension."
+    exit 1
+fi
+
+SOURCE="$1"
+BASENAME="${SOURCE%.pls}"
+C_FILE="${BASENAME}.c"
+
+if [ $# -ge 2 ]; then
+    OUTPUT="$2"
+else
+    OUTPUT="$BASENAME"
+fi
+
+# Check transpiler exists
+if [ ! -x "$TRANSPILER" ]; then
+    echo "Error: Transpiler not found. Run ./build.sh first."
+    exit 1
+fi
+
+# Transpile
+echo "Transpiling $SOURCE..."
+"$TRANSPILER" "$SOURCE" "$C_FILE"
+
+# Compile
+echo "Compiling to $OUTPUT..."
+gcc -o "$OUTPUT" "$C_FILE" -lm
+
+echo ""
+echo "Success! Run with: $OUTPUT"
+
+

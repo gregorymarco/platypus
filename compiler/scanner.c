@@ -81,7 +81,8 @@ int scanner_init(Buffer * psc_buf) {
 /*   scerrnum = 0;  *//*no need - global ANSI C */
 }
 
-void print_token(Token t) {
+/* Note: print_token also exists in platy_st.c for standalone scanner testing */
+static void print_token_internal(Token t) {
 	extern char * kw_table[]; /* link to keyword table in */
 	switch (t.code) {
 	case  RTE_T:

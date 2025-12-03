@@ -15,13 +15,17 @@ b_load(), b_isempty(), b_getc(), b_eob(), b_print(), b_compact(), b_rflag(), b_r
 Note:All functions with in parameter Buffer* pBD assume that pBD is a valid buffer struct allocated with b_allocate. Other types will cause your program to crash! 
 
 ********************************************************************************/
-#define _CRT_SECURE_NO_WARNINGS //DEBUG
-#define _CRTDBG_MAP_ALLOC //DEBUG
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include "buffer.h"
-#include <crtdbg.h>//DEBUG
+
+#ifdef _MSC_VER
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#endif
 
 /********************************************************
 Purpose: Allocator for buffer struct. 
