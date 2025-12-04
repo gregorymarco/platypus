@@ -10,7 +10,6 @@ BUILD_DIR = build
 # Source files
 COMMON_SRC = $(SRC_DIR)/buffer.c $(SRC_DIR)/scanner.c
 PARSER_SRC = $(COMMON_SRC) $(SRC_DIR)/parser.c $(SRC_DIR)/platy.c
-SCANNER_SRC = $(COMMON_SRC) $(SRC_DIR)/platy_st.c
 TRANS_SRC = $(COMMON_SRC) $(SRC_DIR)/codegen.c $(SRC_DIR)/transpiler.c
 
 # Targets

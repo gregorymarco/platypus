@@ -23,7 +23,6 @@ echo "Compiling scanner..."
 gcc -Wall -Wextra -std=c99 -O2 \
     compiler/buffer.c \
     compiler/scanner.c \
-    compiler/platy_st.c \
     -o build/platy_scanner
 
 # Compile transpiler (PLATYPUS -> C)

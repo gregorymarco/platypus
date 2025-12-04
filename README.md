@@ -36,7 +36,6 @@ platypus/
 │   ├── codegen.c/h     # C code generator module
 │   ├── transpiler.c    # Main transpiler (parser + code emission)
 │   ├── platy.c         # Parser-only driver (syntax checking)
-│   └── platy_st.c      # Scanner-only driver (tokenization)
 │
 ├── spec/               # Language specification
 │   ├── language-spec.md    # Full grammar and semantics

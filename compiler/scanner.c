@@ -53,11 +53,10 @@ Token aa_func8(char * lexeme) ERR acceptance
 #undef  DEBUG
 
 /* Global objects - variables */
-/* This buffer is used as a repository for string literals.
-   It is defined in platy_st.c */
+/* This buffer is used as a repository for string literals.*/
 extern Buffer * str_LTBL; /*String literal table */
 int line; /* current line number of the source code */
-extern int scerrnum;     /* defined in platy_st.c - run-time error number */
+extern int scerrnum;     /* run-time error number */
 
 /* Local(file) global objects - variables */
 static Buffer *lex_buf;/*pointer to temporary lexeme buffer*/
@@ -81,7 +80,6 @@ int scanner_init(Buffer * psc_buf) {
 /*   scerrnum = 0;  *//*no need - global ANSI C */
 }
 
-/* Note: print_token also exists in platy_st.c for standalone scanner testing */
 static void print_token_internal(Token t) {
 	extern char * kw_table[]; /* link to keyword table in */
 	switch (t.code) {
