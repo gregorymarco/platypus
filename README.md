@@ -3,10 +3,12 @@
 A compiler for the PLATYPUS programming language that transpiles to C. Originally developed as a compilers course project (CST8152), extended with a full C code generator.
 
 ```
-   ___  __    __  ____  _  _  ___  _  _  ___ 
-  / __)(  )  (  )(_  _)( \/ )/ __)( )( )/ __)
- ( (__  )(__  )(__ _)(_  \  /\__ \ )()(  \__ \
-  \___)(____)(____|____) (__)(___/(__)\_)(___/
+  ____  _       _                         
+ |  _ \| | __ _| |_ _   _ _ __  _   _ ___ 
+ | |_) | |/ _` | __| | | | '_ \| | | / __|
+ |  __/| | (_| | |_| |_| | |_) | |_| \__ \
+ |_|   |_|\__,_|\__|\__, | .__/ \__,_|___/
+                    |___/|_|              
         PLATYPUS → C Transpiler
 ```
 
